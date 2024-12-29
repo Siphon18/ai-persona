@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# AI Persona
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+This repository contains the source code for an AI chatbot application that uses the Gemini API for generating personalized responses. The chatbot mimics the style and tone of a specified Twitter user, leveraging user bio information fetched from the Twitter API. It features a modern, interactive frontend built with React and a backend powered by FastAPI.
 
-## Available Scripts
+## Features
+- Fetches Twitter user details to personalize bot responses.
+- Generates context-aware responses using the Gemini generative AI model.
+- Emoji-enhanced chatbot interactions.
+- Fully responsive UI with smooth animations and transitions.
+- Backend integration with RapidAPI for Twitter data.
 
-In the project directory, you can run:
+## Tech Stack
+### Frontend
+- **React**: For building the user interface.
+- **Framer Motion**: For animations and transitions.
+- **Tailwind CSS**: For styling the application.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Backend
+- **FastAPI**: For handling API requests and responses.
+- **Gemini API**: For generative AI capabilities.
+- **RapidAPI**: For fetching Twitter user details.
+- **CORS Middleware**: For enabling cross-origin resource sharing.
 
 ### Deployment
+- **Uvicorn**: For running the FastAPI server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Installation
 
-### `npm run build` fails to minify
+### Prerequisites
+- Node.js (for the frontend)
+- Python 3.9+ (for the backend)
+- A valid API key for:
+  - Gemini API
+  - RapidAPI (Twitter API)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Steps
+
+#### Backend
+1. Clone this repository:
+    ```bash
+    git clone https://github.com/<your-username>/ai-chatbot-gemini.git
+    cd ai-chatbot-gemini/backend
+    ```
+2. Create a virtual environment:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
+3. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Set up environment variables:
+    Create a `.env` file and add the following:
+    ```env
+    GEMINI_API_KEY=your_gemini_api_key
+    RAPIDAPI_KEY=your_rapidapi_key
+    ```
+5. Run the backend server:
+    ```bash
+    uvicorn main:app --reload
+    ```
+
+#### Frontend
+1. Navigate to the frontend folder:
+    ```bash
+    cd ../frontend
+    ```
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+3. Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+## API Endpoints
+
+### 1. Fetch User Details
+**GET** `/api/user/{username}`
+- Fetches Twitter user bio information.
+
+### 2. Generate Chat Response
+**POST** `/api/chat`
+- Request Body:
+    ```json
+    {
+      "prompt": "Your message here",
+      "username": "elonmusk"
+    }
+    ```
+- Response:
+    ```json
+    {
+      "response": "Generated response here"
+    }
+    ```
+
+## Usage
+1. Open the frontend at `http://localhost:5173`.
+2. Enter a username (e.g., `elonmusk`) and start chatting!
+3. The chatbot will respond in the style of the specified Twitter user.
+
+## Screenshots
+_Add screenshots or gifs of your application here._
+
+## Future Enhancements
+- Add support for additional generative AI models.
+- Improve the error handling and logging system.
+- Enhance the UI/UX with more customization options.
+- Integrate user authentication and profile management.
+
+## Contributing
+Contributions are welcome! Feel free to fork the repository and submit a pull request.
+
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Acknowledgements
+- [OpenAI](https://openai.com/) for the Gemini model.
+- [RapidAPI](https://rapidapi.com/) for Twitter API integration.
+- [Tailwind CSS](https://tailwindcss.com/) for styling.
+- [Framer Motion](https://www.framer.com/motion/) for animations.
+
+---
+Happy coding! 🚀
+

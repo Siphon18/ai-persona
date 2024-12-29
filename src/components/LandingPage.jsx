@@ -13,7 +13,7 @@ const LandingPage = () => {
 
   return (
     <div className="h-screen bg-gradient-to-r from-blue-900 to-purple-800 text-white flex flex-col items-center justify-center dark:bg-gray-900 dark:text-white">
-      <h1 className="text-5xl font-bold mb-6 animate__animated animate__fadeIn">AI Personas</h1>
+      <h1 className="text-5xl font-bold mb-6 animate__animated animate__fadeIn">AI Persona</h1>
       <p className="text-lg mb-8 animate__animated animate__fadeIn animate__delay-1s">Create new AI Twitter personalities</p>
       <input
         type="text"
