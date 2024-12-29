@@ -4,7 +4,7 @@ import google.generativeai as genai
 import requests
 
 # Configure the Gemini API
-genai.configure(api_key="AIzaSyA33quur1M7gjRHRGO9XUriwvcCCJLWy00")
+genai.configure(api_key="YOUR_GEmINI_API_KEY")
 
 # Initialize FastAPI app
 app = FastAPI()
@@ -22,7 +22,7 @@ def get_user_details(username):
     url = "https://twitter154.p.rapidapi.com/user/details"
     querystring = {"username": username}
     headers = {
-        "x-rapidapi-key": "54e6f2c066mshff78f5807ca7eb6p191405jsnb21ecfec91f8",
+        "x-rapidapi-key": "YOUR_RAPID-API-KEY",
         "x-rapidapi-host": "twitter154.p.rapidapi.com"
     }
     response = requests.get(url, headers=headers, params=querystring)
