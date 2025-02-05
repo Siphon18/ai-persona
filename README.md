@@ -39,7 +39,7 @@ This repository contains the source code for an AI chatbot application that uses
 #### Backend
 1. Clone this repository:
     ```bash
-    git clone https://github.com/<your-username>/ai-chatbot-gemini.git
+    git clone https://github.com/Siphon18/my-app.git
     cd ai-chatbot-gemini/backend
     ```
 2. Create a virtual environment:
@@ -104,7 +104,12 @@ This repository contains the source code for an AI chatbot application that uses
 3. The chatbot will respond in the style of the specified Twitter user.
 
 ## Screenshots
-_Add screenshots or gifs of your application here._
+my-app\public\screenshot\image.png
+
+my-app\public\screenshot\Screenshot 2024-12-29 162933.png
+
+my-app\public\screenshot\Screenshot 2024-12-29 162922.png
+
 
 ## Future Enhancements
 - Add support for additional generative AI models.

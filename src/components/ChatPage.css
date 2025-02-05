@@ -1,0 +1,19 @@
+/* Custom Materialistic Chatbox Scrollbar */
+.chatbox-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chatbox-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent track */
+  border-radius: 10px;
+}
+
+.chatbox-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #9b69ff, #6b46c1); /* Smooth gradient */
+  border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+.chatbox-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #b385ff, #8753d1); /* Brighter on hover */
+}
