@@ -38,7 +38,7 @@ const ChatPage = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:8000/chat`, {
+      const response = await fetch(`https://ai-persona-qz50.onrender.com/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -70,7 +70,7 @@ const ChatPage = () => {
     const geminiApiKey = localStorage.getItem('geminiApiKey');
 
     try {
-      const response = await fetch(`http://localhost:8000/chat`, {
+      const response = await fetch(`https://ai-persona-qz50.onrender.com/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
