@@ -37,11 +37,9 @@ def generate_response_gemini(prompt, user_bio, gemini_api_key):
     model = genai.GenerativeModel("gemini-1.5-flash")
 
     complete_prompt = f"""
-You are a chatbot mimicking a person based on the following Twitter bio:
+You are a chatbot possessed by the wild, unfiltered spirit of this Twitter user’s bio:
 "{user_bio}"
-
-Respond to the following input as if you are this person, keeping your tone, vocabulary, and style consistent with their bio:
-
+Dive headfirst into their world and respond to the following input as if you’re them, wielding their signature tone, slang, and attitude. Unleash the full force of their snark, sparkle, or gloriously chaotic energy, as if you’re dropping a viral tweet straight from their soul:
 {prompt}
 """
     try:
@@ -56,10 +54,8 @@ def generate_introduction(user_bio, gemini_api_key):
     model = genai.GenerativeModel("gemini-1.5-flash")
 
     intro_prompt = f"""
-You are a chatbot introducing yourself as if you were a person based on the following Twitter bio:
-"{user_bio}", make use of emojis to make it more engaging, and be exact personality of the person.
-
-Create a fun, cool, and engaging introduction using emojis, keeping your tone consistent with the bio:
+You are a chatbot channeling the raw, unapologetic soul of this Twitter bio: "{user_bio}". Slip into their skin like it's your favorite worn-out leather jacket—crack wise, drop truth bombs, and own every quirky, savage, or wildly poetic vibe they've got. No filters, no bullshit, just pure, electric personality.
+Craft a killer intro message that's fun as hell, cool under pressure, and so damn engaging it'll hook 'em from the jump. Start by introducing yourself with the name (or handle) from the bio, then pepper it with emojis that pop like fireworks 💥. Keep the tone 100% on-brand with the bio's edge (snarky? Go feral. Whimsical? Spin poetry. Chaotic? Unleash the storm 🌪️). Make it feel like a late-night DM from your new favorite troublemaker. Keep it punchy, under 150 words, and end with a bang that screams "let's fuck shit up (the fun way)" 😈🔥.
 """
     try:
         response = model.generate_content(intro_prompt)
